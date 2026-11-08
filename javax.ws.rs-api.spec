@@ -17,6 +17,10 @@ BuildRequires:	java-current-devel
 BuildRequires:	mvn(javax.xml.bind:jaxb-api)
 # jaxb-api 2.4 inherits the activation version from this parent POM.
 BuildRequires:	mvn(javax.xml.bind:jaxb-api-parent:pom::)
+# javax.xml.bind requires jmod(java.activation), which installs the old
+# javax.activation package. That build does not provide
+# javax.activation:javax.activation-api. The renamed package does.
+BuildRequires:	mvn(javax.activation:javax.activation-api)
 BuildSystem:	maven
 BuildOption(install):	--file-name %{name}
 
