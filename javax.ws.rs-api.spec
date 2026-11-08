@@ -15,6 +15,8 @@ BuildRequires:	python
 BuildRequires:	maven
 BuildRequires:	java-current-devel
 BuildRequires:	mvn(javax.xml.bind:jaxb-api)
+# jaxb-api 2.4 inherits the activation version from this parent POM.
+BuildRequires:	mvn(javax.xml.bind:jaxb-api-parent:pom::)
 BuildSystem:	maven
 BuildOption(install):	--file-name %{name}
 
